@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tap-syn"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["torch>=2.3", "numpy", "deepwave", "opencv-python-headless", "piq", "torchvision"]
+
+[project.scripts]
+tap-syn = "tap_syn.cli:main"
+
+[tool.setuptools]
+packages = [
+    "tap_syn",
+    "tap_syn.data",
+    "tap_syn.fwi",
+    "tap_syn.lora",
+    "tap_syn.losses",
+    "tap_syn.methods",
+    "tap_syn.nets",
+    "tap_syn.training",
+]
+
+[tool.setuptools.package-dir]
+tap_syn = "."
